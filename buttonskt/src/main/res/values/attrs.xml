@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ButtonsKt">
+        <!-- Configuration -->
+        <attr name="bkt_isEnabled" format="boolean"/>
+        <attr name="bkt_isRippleEffectEnabled" format="boolean"/>
+
+        <!-- Text Styles -->
+        <attr name="bkt_text" format="string" />
+        <attr name="bkt_textSize" format="dimension" />
+        <attr name="bkt_textColor" format="color" />
+        <attr name="bkt_disabledTextColor" format="color" />
+        <attr name="bkt_textAllCaps" format="boolean" />
+
+        <!-- https://developer.android.com/reference/android/R.attr#textStyle -->
+        <attr name="bkt_textStyle" format="enum">
+            <enum name="bold" value="1" />
+            <enum name="italic" value="2" />
+            <enum name="normal" value="0" />
+        </attr>
+
+        <!-- https://developer.android.com/reference/android/R.attr#gravity -->
+        <attr name="bkt_textGravity" format="enum">
+            <enum name="bottom" value="50" />
+            <enum name="gravity" value="11" />
+            <enum name="center_horizontal" value="1" />
+            <enum name="center_vertical" value="10" />
+            <enum name="clip_horizontal" value="8" />
+            <enum name="clip_vertical" value="80" />
+            <enum name="end" value="800005" />
+            <enum name="fill" value="77" />
+            <enum name="fill_horizontal" value="7" />
+            <enum name="fill_vertical" value="70" />
+            <enum name="left" value="3" />
+            <enum name="right" value="5" />
+            <enum name="start" value="800003" />
+            <enum name="top" value="30" />
+        </attr>
+
+        <!-- https://developer.android.com/reference/android/R.attr#textAlignment -->
+        <attr name="bkt_textAlignment" format="enum">
+            <enum name="center" value="4" />
+            <enum name="gravity" value="1" />
+            <enum name="inherit" value="0" />
+            <enum name="textEnd" value="3" />
+            <enum name="textStart" value="2" />
+            <enum name="viewEnd" value="6" />
+            <enum name="viewStart" value="5" />
+        </attr>
+
+        <!-- Colors -->
         <attr name="bkt_defaultBackgroundColor" format="color" />
         <attr name="bkt_focusedBackgroundColor" format="color" />
         <attr name="bkt_disabledBackgroundColor" format="color" />
+
+        <!-- Shape -->
         <attr name="bkt_radius" format="dimension" />
         <attr name="bkt_radiusTopLeft" format="dimension" />
         <attr name="bkt_radiusTopRight" format="dimension" />

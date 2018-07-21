@@ -7,11 +7,26 @@ import android.graphics.Color
  */
 
 data class ButtonsKtConfig(
+        // Default configurations
+        internal var isEnabled: Boolean = true,
+        internal var isRippleEffectEnabled: Boolean = true,
+
+        // Text
+        internal var text: String = "ButtonsKt",
+        internal var textSize: Float = 16f,
+        internal var textColor: Int = Color.parseColor("#ffffff"),
+        internal var disabledTextColor: Int = Color.parseColor("#ffffff"),
+        internal var textGravity: Int = 1,
+        internal var textAlignment: Int = 4,
+        internal var isTextAllCaps: Boolean = false,
+        internal var textStyle: Int = 0,
+
+        // Background
         internal var defaultBackgroundColor: Int = Color.parseColor("#2c3e50"),
         internal var focusedBackgroundColor: Int = Color.parseColor("#34495e"),
         internal var disabledBackgroundColor: Int = Color.parseColor("#ecf0f1"),
-        internal var isEnabled: Boolean = true,
-        internal var isRippleEffectEnabled: Boolean = true,
+
+        // Shape
         internal var radius: Float = 0f,
         internal var radiusTopLeft: Float = 0f,
         internal var radiusTopRight: Float = 0f,

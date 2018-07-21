@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonsKt">
+        <attr name="bkt_defaultBackgroundColor" format="color" />
+        <attr name="bkt_focusedBackgroundColor" format="color" />
+        <attr name="bkt_disabledBackgroundColor" format="color" />
+        <attr name="bkt_radius" format="dimension" />
+        <attr name="bkt_radiusTopLeft" format="dimension" />
+        <attr name="bkt_radiusTopRight" format="dimension" />
+        <attr name="bkt_radiusBottomLeft" format="dimension" />
+        <attr name="bkt_radiusBottomRight" format="dimension" />
+    </declare-styleable>
+</resources>

@@ -18,6 +18,8 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
 import io.jmdg.buttonskt.internal.helpers.ResolutionUtil
+import android.graphics.Typeface
+import android.view.Gravity
 
 
 /**
@@ -80,6 +82,7 @@ class ButtonsKtView : LinearLayout {
             isRippleEffectEnabled = typedArray.getBoolean(R.styleable.ButtonsKtView_bkt_isRippleEffectEnabled, true)
 
             // Icon Resource
+            iconResource = typedArray.getInteger(R.styleable.ButtonsKtView_bkt_iconResource, -1)
             iconDrawable = typedArray.getResourceId(R.styleable.ButtonsKtView_bkt_iconDrawable, -1)
             iconTint = typedArray.getColor(R.styleable.ButtonsKtView_bkt_iconTint, config.iconTint)
             iconArea = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconArea, config.iconArea)
@@ -186,13 +189,56 @@ class ButtonsKtView : LinearLayout {
     }
 
     private fun renderSubViews() {
-        renderIconView()
+        if (config.iconResource != -1) {
+            renderFontAwesomeResourceView()
+        } else {
+            renderIconView()
+        }
         renderTextView()
     }
 
+    private fun renderFontAwesomeResourceView() {
+        val layoutParams = LinearLayout.LayoutParams(ResolutionUtil.dpToPx(context, config.iconArea), ResolutionUtil.dpToPx(context, config.iconArea))
+        layoutParams.gravity = Gravity.CENTER_VERTICAL
+
+        // Icon Margin
+        if (config.iconMargin > 0) {
+            layoutParams.setMargins(config.iconMargin, config.iconMargin, config.iconMargin, config.iconMargin)
+        } else {
+            layoutParams.setMargins(config.iconMarginLeft, config.iconMarginTop, config.iconMarginRight, config.iconMarginBottom)
+        }
+
+        val iconView = TextView(context)
+        iconView.layoutParams = layoutParams
+
+        // Icon Padding
+        if (config.iconPadding > 0) {
+            iconView.setPadding(config.iconPadding, config.iconPadding, config.iconPadding, config.iconPadding)
+        } else {
+            iconView.setPadding(config.iconPaddingLeft, config.iconPaddingTop, config.iconPaddingRight, config.iconPaddingBottom)
+        }
+
+        iconView.setTextSize(TypedValue.COMPLEX_UNIT_SP, config.textSize)
+        iconView.setTextColor(config.textColor)
+
+        // Render TypeFace
+        // Font Awesome
+        //FIXME: Important, this will use up too much memory when instantiated all the time for each views
+        val fontFace = Typeface.createFromAsset(context.assets, "fontawesome_solid.ttf")
+        iconView.typeface = fontFace
+        iconView.gravity = Gravity.CENTER
+
+        // Load icon
+        val iconsArray = resources.getStringArray(R.array.FontAwesome)
+        iconView.text = iconsArray[config.iconResource]
+
+        addView(iconView)
+    }
+
     private fun renderIconView() {
-        if (config.iconDrawable != -1) {
+        if (config.iconDrawable != -1 && config.iconResource == -1) {
             val layoutParams = LinearLayout.LayoutParams(ResolutionUtil.dpToPx(context, config.iconArea), ResolutionUtil.dpToPx(context, config.iconArea))
+            layoutParams.gravity = Gravity.CENTER_VERTICAL
 
             // Icon Margin
             if (config.iconMargin > 0) {
@@ -200,6 +246,7 @@ class ButtonsKtView : LinearLayout {
             } else {
                 layoutParams.setMargins(config.iconMarginLeft, config.iconMarginTop, config.iconMarginRight, config.iconMarginBottom)
             }
+
 
             val imageView = ImageView(context)
             imageView.layoutParams = layoutParams

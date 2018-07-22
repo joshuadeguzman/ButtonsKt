@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         // Can be reusable for multiple components
         val configuration = ButtonsKt(
-                text = "Sample demo",
+                text = "Declare via Code",
                 radius = 30f,
                 padding = 70,
                 marginTop = 20,

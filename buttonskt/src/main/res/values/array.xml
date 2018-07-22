@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="FontAwesome">
+        <!-- address-book -->
+        <item>&#xf2b9;</item>
+        <!-- address-card -->
+        <item>&#xf2bb;</item>
+        <!-- calculator -->
+        <item>&#xf1ec;</item>
+        <!-- x-ray -->
+        <item>&#xf497;</item>
+    </string-array>
+</resources>

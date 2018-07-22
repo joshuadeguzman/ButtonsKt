@@ -15,10 +15,11 @@ data class ButtonsKt(
         internal var isRippleEffectEnabled: Boolean = true,
 
         // Icon
+        internal var iconResource: Int = -1,
         internal var iconDrawable: Int = -1,
         internal var iconTint: Int = Color.WHITE,
         internal var disabledIconTint: Int = Color.TRANSPARENT,
-        internal var iconArea: Float = 30f,
+        internal var iconArea: Float = 25f,
 
         // Icon Margin
         internal var iconMargin: Int = 0,
@@ -67,11 +68,11 @@ data class ButtonsKt(
         internal var marginBottom: Int = 0,
 
         // Padding
-        internal var padding: Int = 50,
-        internal var paddingLeft: Int = 50,
-        internal var paddingTop: Int = 50,
-        internal var paddingRight: Int = 50,
-        internal var paddingBottom: Int = 50,
+        internal var padding: Int = 30,
+        internal var paddingLeft: Int = 30,
+        internal var paddingTop: Int = 30,
+        internal var paddingRight: Int = 30,
+        internal var paddingBottom: Int = 30,
 
         // Radius
         internal var radius: Float = 0f,

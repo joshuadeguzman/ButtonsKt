@@ -6,6 +6,13 @@
         <attr name="bkt_isRippleEffectEnabled" format="boolean" />
 
         <!-- Icon styles -->
+        <attr name="bkt_iconResource" format="enum">
+            <enum name="fa_address_book_solid" value="0" />
+            <enum name="fa_address_card_solid" value="1" />
+            <enum name="fa_calculator_solid" value="2" />
+            <enum name="fa_xray_solid" value="3" />
+        </attr>
+
         <attr name="bkt_iconDrawable" format="reference" />
         <attr name="bkt_iconTint" format="color" />
         <attr name="bkt_disabledIconTint" format="color" />

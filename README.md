@@ -3,8 +3,8 @@
 > A customisable button kit for Android
 
 ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations 
-(borders & outlines, radius & corners,background color w/ states and easy implementation of ripple effect!, icons, and more!) 
-whilst being lightweight, plus runtime xml selection of icons from FontAwesome!
+(icons, borders & outlines, corner radius, background and more!) 
+whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
 
 #### FEATURES
 ###### Icons
@@ -48,12 +48,17 @@ dependencies {
 }
 ```
 
-#### USAGE
+#### BASIC USAGE
 > __TIP__: Load URI xmlns:app="http://schemas.android.com/apk/res-auto" to render runtime custom attributes
+
+> __TIP__: See ``DOCS`` for more information.
+
 ```XML
 <RootLayout
 ...
-xmlns:app="http://schemas.android.com/apk/res-auto"/>
+xmlns:app="http://schemas.android.com/apk/res-auto"
+...
+/>
 
   <io.jmdg.buttonskt.ButtonsKtView
         android:id="@+id/bkt_demo_xml_2"
@@ -71,7 +76,6 @@ xmlns:app="http://schemas.android.com/apk/res-auto"/>
         app:bkt_textColor="@android:color/white"
         app:bkt_textSize="7dp"
         app:bkt_textStyle="bold" />
-
 ...
 </RootLayout>
 

@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="50dp"
-    tools:context=".MainActivity">
+    android:padding="50dp">
 
-    <io.jmdg.buttonskt.ButtonsKt
-        android:id="@+id/btk_demo"
+    <io.jmdg.buttonskt.ButtonsKtView
+        android:id="@+id/bkt_demo_xml"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:gravity="center"
         android:textAlignment="center"
         app:bkt_defaultBackgroundColor="@color/colorPrimary"
         app:bkt_disabledTextColor="@android:color/darker_gray"

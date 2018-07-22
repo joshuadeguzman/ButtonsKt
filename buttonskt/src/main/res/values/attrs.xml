@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ButtonsKt">
+    <declare-styleable name="ButtonsKtView">
         <!-- Configuration -->
-        <attr name="bkt_isEnabled" format="boolean"/>
-        <attr name="bkt_isRippleEffectEnabled" format="boolean"/>
+        <attr name="bkt_isEnabled" format="boolean" />
+        <attr name="bkt_isRippleEffectEnabled" format="boolean" />
 
         <!-- Text Styles -->
         <attr name="bkt_text" format="string" />
@@ -38,14 +38,12 @@
         </attr>
 
         <!-- https://developer.android.com/reference/android/R.attr#textAlignment -->
-        <attr name="bkt_textAlignment" format="enum">
-            <enum name="center" value="4" />
-            <enum name="gravity" value="1" />
-            <enum name="inherit" value="0" />
-            <enum name="textEnd" value="3" />
-            <enum name="textStart" value="2" />
-            <enum name="viewEnd" value="6" />
-            <enum name="viewStart" value="5" />
+        <attr name="bkt_textPosition" format="enum">
+            <enum name="left" value="9" />
+            <enum name="top" value="10" />
+            <enum name="right" value="11" />
+            <enum name="bottom" value="12" />
+            <enum name="center" value="13" />
         </attr>
 
         <!-- Colors -->

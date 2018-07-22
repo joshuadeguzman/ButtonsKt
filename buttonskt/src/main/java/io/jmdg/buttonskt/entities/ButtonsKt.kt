@@ -1,23 +1,24 @@
 package io.jmdg.buttonskt.entities
 
 import android.graphics.Color
+import io.jmdg.buttonskt.constants.BktLayoutParams
 
 /**
  * Created by Joshua de Guzman on 21/07/2018.
  */
 
-data class ButtonsKtConfig(
+data class ButtonsKt(
         // Default configurations
         internal var isEnabled: Boolean = true,
         internal var isRippleEffectEnabled: Boolean = true,
 
         // Text
-        internal var text: String = "ButtonsKt",
+        internal var text: String = "ButtonsKtView",
         internal var textSize: Float = 16f,
         internal var textColor: Int = Color.parseColor("#ffffff"),
         internal var disabledTextColor: Int = Color.parseColor("#ffffff"),
         internal var textGravity: Int = 1,
-        internal var textAlignment: Int = 4,
+        internal var textPosition: Int = 13,
         internal var isTextAllCaps: Boolean = false,
         internal var textStyle: Int = 0,
 
@@ -26,7 +27,25 @@ data class ButtonsKtConfig(
         internal var focusedBackgroundColor: Int = Color.parseColor("#34495e"),
         internal var disabledBackgroundColor: Int = Color.parseColor("#ecf0f1"),
 
-        // Shape
+        // Layout Control
+        internal var width: Int = BktLayoutParams.WRAP_CONTENT,
+        internal var height: Int = BktLayoutParams.WRAP_CONTENT,
+
+        // Padding
+        internal var padding: Int = -1,
+        internal var paddingLeft: Int = -1,
+        internal var paddingTop: Int = -1,
+        internal var paddingRight: Int = -1,
+        internal var paddingBottom: Int = -1,
+
+        // Margin
+        internal var margin: Int = 0,
+        internal var marginLeft: Int = 0,
+        internal var marginTop: Int = 0,
+        internal var marginRight: Int = 0,
+        internal var marginBottom: Int = 0,
+
+        // Radius
         internal var radius: Float = 0f,
         internal var radiusTopLeft: Float = 0f,
         internal var radiusTopRight: Float = 0f,

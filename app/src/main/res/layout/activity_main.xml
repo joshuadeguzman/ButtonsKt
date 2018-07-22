@@ -13,15 +13,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        app:bkt_borderWidth="2dp"
         app:bkt_defaultBackgroundColor="@color/colorPrimary"
         app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
         app:bkt_iconDrawable="@drawable/ic_sample"
+        app:bkt_iconMarginRight="5dp"
         app:bkt_radius="10dp"
-        app:bkt_text="Sample demo"
+        app:bkt_text="SEND"
         app:bkt_textColor="@android:color/white"
-        app:bkt_textSize="8sp" />
+        app:bkt_textSize="7dp"
+        app:bkt_textStyle="bold" />
 
     <io.jmdg.buttonskt.ButtonsKtView
         android:id="@+id/bkt_demo_xml_2"
@@ -33,26 +34,11 @@
         app:bkt_defaultBackgroundColor="@color/colorPrimary"
         app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
-        app:bkt_iconResource="fa_calculator_solid"
+        app:bkt_iconResource="fa_cloud_download_alt"
         app:bkt_radius="10dp"
-        app:bkt_text="FontAwesome Icon"
+        app:bkt_text="DOWNLOAD"
         app:bkt_textColor="@android:color/white"
-        app:bkt_textSize="8sp" />
-
-    <io.jmdg.buttonskt.ButtonsKtView
-        android:id="@+id/bkt_demo_xml_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:textAlignment="center"
-        app:bkt_borderWidth="2dp"
-        app:bkt_defaultBackgroundColor="@color/colorPrimary"
-        app:bkt_disabledTextColor="@android:color/darker_gray"
-        app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
-        app:bkt_iconResource="fa_address_card_solid"
-        app:bkt_radius="10dp"
-        app:bkt_text="FontAwesome Icon"
-        app:bkt_textColor="@android:color/white"
-        app:bkt_textSize="8sp" />
+        app:bkt_textSize="7dp"
+        app:bkt_textStyle="bold" />
 
 </LinearLayout>

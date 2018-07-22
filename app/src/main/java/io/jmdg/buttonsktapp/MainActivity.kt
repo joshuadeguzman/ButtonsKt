@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import io.jmdg.buttonskt.ButtonsKtView
 import io.jmdg.buttonskt.constants.BktTextPosition
+import io.jmdg.buttonskt.constants.BktTextStyle
 import io.jmdg.buttonskt.entities.ButtonsKt
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,11 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         // Can be reusable for multiple components
         val configuration = ButtonsKt(
-                text = "Declare via Code",
+                text = "DECLARE VIA CODE",
+                textSize = 18f,
+                textStyle = BktTextStyle.BOLD,
                 radius = 30f,
-                padding = 70,
-                marginTop = 20,
-                defaultBorderColor = Color.GRAY,
+                padding = 50,
+                marginTop = 25,
                 textPosition = BktTextPosition.LEFT
         )
 

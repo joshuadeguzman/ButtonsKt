@@ -251,9 +251,9 @@ class ButtonsKtView : LinearLayout {
                 layoutParams.setMargins(config.iconMarginLeft, config.iconMarginTop, config.iconMarginRight, config.iconMarginBottom)
             }
 
-
             val imageView = ImageView(context)
             imageView.layoutParams = layoutParams
+            imageView.scaleType = ImageView.ScaleType.FIT_XY
             imageView.setImageResource(config.iconDrawable)
             imageView.setColorFilter(config.iconTint)
 
@@ -263,7 +263,6 @@ class ButtonsKtView : LinearLayout {
             } else {
                 imageView.setPadding(config.iconPaddingLeft, config.iconPaddingTop, config.iconPaddingRight, config.iconPaddingBottom)
             }
-
 
             // If disabled
             if (!config.isEnabled) {

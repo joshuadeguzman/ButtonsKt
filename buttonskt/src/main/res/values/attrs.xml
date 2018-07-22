@@ -10,7 +10,8 @@
             <enum name="fa_address_book_solid" value="0" />
             <enum name="fa_address_card_solid" value="1" />
             <enum name="fa_calculator_solid" value="2" />
-            <enum name="fa_xray_solid" value="3" />
+            <enum name="fa_cloud_download_alt" value="3" />
+            <enum name="fa_xray_solid" value="4" />
         </attr>
 
         <attr name="bkt_iconDrawable" format="reference" />

@@ -23,9 +23,9 @@ data class ButtonsKt(
 
         // Icon Margin
         internal var iconMargin: Int = 0,
-        internal var iconMarginLeft: Int = 0,
+        internal var iconMarginLeft: Int = 10,
         internal var iconMarginTop: Int = 10,
-        internal var iconMarginRight: Int = 20,
+        internal var iconMarginRight: Int = 25,
         internal var iconMarginBottom: Int = 10,
 
         // Icon Padding

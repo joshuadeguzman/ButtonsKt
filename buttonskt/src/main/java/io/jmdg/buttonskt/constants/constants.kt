@@ -6,6 +6,12 @@ import android.widget.RelativeLayout
  * Created by Joshua de Guzman on 22/07/2018.
  */
 
+object BktTextStyle {
+    const val NORMAL = 0
+    const val BOLD = 1
+    const val ITALIC = 2
+}
+
 object BktTextPosition {
     const val LEFT = RelativeLayout.ALIGN_PARENT_LEFT
     const val TOP = RelativeLayout.ALIGN_PARENT_TOP

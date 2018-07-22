@@ -19,7 +19,9 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import io.jmdg.buttonskt.internal.helpers.ResolutionUtil
 import android.graphics.Typeface
+import android.util.Log
 import android.view.Gravity
+import io.jmdg.buttonskt.internal.ButtonKtSingleton
 
 
 /**
@@ -223,9 +225,11 @@ class ButtonsKtView : LinearLayout {
 
         // Render TypeFace
         // Font Awesome
-        //FIXME: Important, this will use up too much memory when instantiated all the time for each views
-        val fontFace = Typeface.createFromAsset(context.assets, "fontawesome_solid.ttf")
-        iconView.typeface = fontFace
+        if(ButtonKtSingleton.typeface == null){
+            ButtonKtSingleton.typeface = Typeface.createFromAsset(context.assets, "fontawesome_solid.ttf")
+        }
+
+        iconView.typeface = ButtonKtSingleton.typeface
         iconView.gravity = Gravity.CENTER
 
         // Load icon

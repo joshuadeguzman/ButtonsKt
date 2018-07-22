@@ -121,26 +121,6 @@ class ButtonsKtView : RelativeLayout {
         }
 
         // Padding
-        if (config.padding == -1) {
-            config.padding = resources.getDimension(R.dimen.padding_normal).toInt()
-        }
-
-        if (config.paddingLeft == -1) {
-            config.paddingLeft = resources.getDimension(R.dimen.padding_normal).toInt()
-        }
-
-        if (config.paddingTop == -1) {
-            config.paddingTop = resources.getDimension(R.dimen.padding_normal).toInt()
-        }
-
-        if (config.paddingRight == -1) {
-            config.paddingRight = resources.getDimension(R.dimen.padding_normal).toInt()
-        }
-
-        if (config.paddingBottom == -1) {
-            config.paddingBottom = resources.getDimension(R.dimen.padding_normal).toInt()
-        }
-
         if (config.padding > 0) {
             this.setPadding(config.padding, config.padding, config.padding, config.padding)
         } else {

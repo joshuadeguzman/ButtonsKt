@@ -45,11 +45,11 @@ data class ButtonsKt(
         internal var marginBottom: Int = 0,
 
         // Padding
-        internal var padding: Int = -1,
-        internal var paddingLeft: Int = -1,
-        internal var paddingTop: Int = -1,
-        internal var paddingRight: Int = -1,
-        internal var paddingBottom: Int = -1,
+        internal var padding: Int = 50,
+        internal var paddingLeft: Int = 50,
+        internal var paddingTop: Int = 50,
+        internal var paddingRight: Int = 50,
+        internal var paddingBottom: Int = 50,
 
         // Radius
         internal var radius: Float = 0f,

@@ -4,7 +4,6 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import io.jmdg.buttonskt.ButtonsKtView
-import io.jmdg.buttonskt.constants.BktLayoutParams
 import io.jmdg.buttonskt.constants.BktTextPosition
 import io.jmdg.buttonskt.entities.ButtonsKt
 import kotlinx.android.synthetic.main.activity_main.*
@@ -17,16 +16,12 @@ class MainActivity : AppCompatActivity() {
 
         // Can be reusable for multiple components
         val configuration = ButtonsKt(
-                isEnabled = true,
                 text = "Sample demo",
-                radius = 100f,
+                radius = 30f,
                 padding = 70,
-                margin = 15,
-                borderWidth = 10,
+                marginTop = 20,
                 defaultBorderColor = Color.GRAY,
-                height = BktLayoutParams.WRAP_CONTENT,
-                width = BktLayoutParams.MATCH_PARENT,
-                textPosition = BktTextPosition.CENTER
+                textPosition = BktTextPosition.LEFT
         )
 
         // Create ButtonsKtView with the desired configuration instance

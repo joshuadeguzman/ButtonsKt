@@ -6,25 +6,24 @@
         <attr name="bkt_isRippleEffectEnabled" format="boolean" />
 
         <!-- Icon styles -->
-        <attr name="bkt_iconDrawable" format="reference"/>
-        <attr name="bkt_iconTint" format="color"/>
-        <attr name="bkt_disabledIconTint" format="color"/>
-        <attr name="bkt_iconWidth" format="dimension"/>
-        <attr name="bkt_iconHeight" format="dimension"/>
+        <attr name="bkt_iconDrawable" format="reference" />
+        <attr name="bkt_iconTint" format="color" />
+        <attr name="bkt_disabledIconTint" format="color" />
+        <attr name="bkt_iconArea" format="dimension" />
 
         <!-- Icon Margin -->
-        <attr name="bkt_iconMargin" format="dimension"/>
-        <attr name="bkt_iconMarginLeft" format="dimension"/>
-        <attr name="bkt_iconMarginTop" format="dimension"/>
-        <attr name="bkt_iconMarginRight" format="dimension"/>
-        <attr name="bkt_iconMarginBottom" format="dimension"/>
+        <attr name="bkt_iconMargin" format="dimension" />
+        <attr name="bkt_iconMarginLeft" format="dimension" />
+        <attr name="bkt_iconMarginTop" format="dimension" />
+        <attr name="bkt_iconMarginRight" format="dimension" />
+        <attr name="bkt_iconMarginBottom" format="dimension" />
 
         <!-- Icon Padding -->
-        <attr name="bkt_iconPadding" format="dimension"/>
-        <attr name="bkt_iconPaddingLeft" format="dimension"/>
-        <attr name="bkt_iconPaddingTop" format="dimension"/>
-        <attr name="bkt_iconPaddingRight" format="dimension"/>
-        <attr name="bkt_iconPaddingBottom" format="dimension"/>
+        <attr name="bkt_iconPadding" format="dimension" />
+        <attr name="bkt_iconPaddingLeft" format="dimension" />
+        <attr name="bkt_iconPaddingTop" format="dimension" />
+        <attr name="bkt_iconPaddingRight" format="dimension" />
+        <attr name="bkt_iconPaddingBottom" format="dimension" />
 
         <!-- Text Styles -->
         <attr name="bkt_text" format="string" />
@@ -40,10 +39,10 @@
             <enum name="normal" value="0" />
         </attr>
 
-        <!-- https://developer.android.com/reference/android/R.attr#gravity -->
+        <!--https://developer.android.com/reference/android/R.attr#gravity-->
         <attr name="bkt_textGravity" format="enum">
             <enum name="bottom" value="50" />
-            <enum name="gravity" value="11" />
+            <enum name="center" value="11" />
             <enum name="center_horizontal" value="1" />
             <enum name="center_vertical" value="10" />
             <enum name="clip_horizontal" value="8" />
@@ -79,7 +78,7 @@
         <attr name="bkt_disabledBorderColor" format="color" />
 
         <!-- Padding -->
-        <attr name="bkt_padding" format="dimension"/>
+        <attr name="bkt_padding" format="dimension" />
         <attr name="bkt_paddingLeft" format="dimension" />
         <attr name="bkt_paddingTop" format="dimension" />
         <attr name="bkt_paddingRight" format="dimension" />

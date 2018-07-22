@@ -6,22 +6,22 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="50dp">
+    android:padding="20dp">
 
     <io.jmdg.buttonskt.ButtonsKtView
         android:id="@+id/bkt_demo_xml"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAlignment="center"
         app:bkt_borderWidth="2dp"
         app:bkt_defaultBackgroundColor="@color/colorPrimary"
         app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
+        app:bkt_iconArea="10dp"
         app:bkt_iconDrawable="@drawable/ic_sample"
-        app:bkt_radius="50dp"
+        app:bkt_radius="10dp"
         app:bkt_text="Sample demo"
-        app:bkt_textColor="@android:color/holo_blue_bright"
-        app:bkt_textGravity="center_horizontal"
-        app:bkt_textStyle="bold" />
+        app:bkt_textColor="@android:color/white"
+        app:bkt_textSize="8sp" />
 
 </LinearLayout>

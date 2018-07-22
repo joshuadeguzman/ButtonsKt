@@ -1,6 +1,7 @@
 package io.jmdg.buttonskt.entities
 
 import android.graphics.Color
+import android.view.Gravity
 import io.jmdg.buttonskt.constants.BktLayoutParams
 import io.jmdg.buttonskt.constants.BktTextPosition
 
@@ -17,14 +18,13 @@ data class ButtonsKt(
         internal var iconDrawable: Int = -1,
         internal var iconTint: Int = Color.WHITE,
         internal var disabledIconTint: Int = Color.TRANSPARENT,
-        internal var iconHeight: Int = 100,
-        internal var iconWidth: Int = 100,
+        internal var iconArea: Float = 30f,
 
         // Icon Margin
-        internal var iconMargin: Int = 10,
-        internal var iconMarginLeft: Int = 10,
+        internal var iconMargin: Int = 0,
+        internal var iconMarginLeft: Int = 0,
         internal var iconMarginTop: Int = 10,
-        internal var iconMarginRight: Int = 10,
+        internal var iconMarginRight: Int = 20,
         internal var iconMarginBottom: Int = 10,
 
         // Icon Padding
@@ -36,10 +36,10 @@ data class ButtonsKt(
 
         // Text
         internal var text: String = "ButtonsKtView",
-        internal var textSize: Float = 16f,
+        internal var textSize: Float = 15f,
         internal var textColor: Int = Color.parseColor("#ffffff"),
         internal var disabledTextColor: Int = Color.parseColor("#ffffff"),
-        internal var textGravity: Int = 1,
+        internal var textGravity: Int = Gravity.CENTER,
         internal var textPosition: Int = BktTextPosition.CENTER,
         internal var isTextAllCaps: Boolean = false,
         internal var textStyle: Int = 0,

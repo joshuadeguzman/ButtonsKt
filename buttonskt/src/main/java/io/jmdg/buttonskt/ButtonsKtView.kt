@@ -12,17 +12,19 @@ import android.os.Build
 import android.annotation.TargetApi
 import android.graphics.Color
 import android.graphics.drawable.StateListDrawable
+import android.util.TypedValue
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import io.jmdg.buttonskt.constants.BktTextPosition
+import io.jmdg.buttonskt.internal.helpers.ResolutionUtil
 
 
 /**
  * Created by Joshua de Guzman on 21/07/2018.
  */
 
-class ButtonsKtView : RelativeLayout {
+class ButtonsKtView : LinearLayout {
     private val tag = ButtonsKtView::class.java.simpleName
     private var attrs: AttributeSet? = null
     private var config = ButtonsKt()
@@ -80,8 +82,7 @@ class ButtonsKtView : RelativeLayout {
             // Icon Resource
             iconDrawable = typedArray.getResourceId(R.styleable.ButtonsKtView_bkt_iconDrawable, -1)
             iconTint = typedArray.getColor(R.styleable.ButtonsKtView_bkt_iconTint, config.iconTint)
-            iconWidth = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconWidth, config.iconWidth.toFloat()).toInt()
-            iconHeight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconHeight, config.iconHeight.toFloat()).toInt()
+            iconArea = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconArea, config.iconArea)
 
             // Icon Margin
             iconMargin = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMargin, config.iconMargin.toFloat()).toInt()
@@ -131,11 +132,11 @@ class ButtonsKtView : RelativeLayout {
             paddingBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingBottom, config.paddingBottom.toFloat()).toInt()
 
             // Radius
-            radius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radius, config.radius)
-            radiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopLeft, config.radiusTopLeft)
-            radiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopRight, config.radiusTopRight)
-            radiusBottomLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomLeft, config.radiusBottomLeft)
-            radiusBottomRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomRight, config.radiusBottomRight)
+            radius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radius, ResolutionUtil.dpToPx(context, config.radius).toFloat())
+            radiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopLeft, ResolutionUtil.dpToPx(context, config.radiusTopLeft).toFloat())
+            radiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopRight, ResolutionUtil.dpToPx(context, config.radiusTopRight).toFloat())
+            radiusBottomLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomLeft, ResolutionUtil.dpToPx(context, config.radiusBottomLeft).toFloat())
+            radiusBottomRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomRight, ResolutionUtil.dpToPx(context, config.radiusBottomRight).toFloat())
         }
 
         renderBackground()
@@ -191,8 +192,7 @@ class ButtonsKtView : RelativeLayout {
 
     private fun renderIconView() {
         if (config.iconDrawable != -1) {
-            val layoutParams = RelativeLayout.LayoutParams(config.iconWidth, config.iconHeight)
-            layoutParams.addRule(RelativeLayout.CENTER_VERTICAL)
+            val layoutParams = LinearLayout.LayoutParams(ResolutionUtil.dpToPx(context, config.iconArea), ResolutionUtil.dpToPx(context, config.iconArea))
 
             // Icon Margin
             if (config.iconMargin > 0) {
@@ -206,7 +206,6 @@ class ButtonsKtView : RelativeLayout {
             imageView.setImageResource(config.iconDrawable)
             imageView.setColorFilter(config.iconTint)
 
-
             // Icon Padding
             if (config.iconPadding > 0) {
                 imageView.setPadding(config.iconPadding, config.iconPadding, config.iconPadding, config.iconPadding)
@@ -216,7 +215,7 @@ class ButtonsKtView : RelativeLayout {
 
 
             // If disabled
-            if(!config.isEnabled){
+            if (!config.isEnabled) {
                 imageView.setColorFilter(config.disabledIconTint)
             }
 
@@ -229,21 +228,18 @@ class ButtonsKtView : RelativeLayout {
             config.text = config.text.toUpperCase()
         }
 
-        val layoutParams = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT)
-        layoutParams.addRule(config.textPosition)
+        val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+        layoutParams.gravity = config.textGravity
 
-        if (config.textPosition == BktTextPosition.LEFT || config.textPosition == BktTextPosition.RIGHT) {
-            layoutParams.addRule(RelativeLayout.CENTER_VERTICAL)
-        } else if (config.textPosition == BktTextPosition.TOP || config.textPosition == BktTextPosition.BOTTOM) {
-            layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL)
+        if (config.iconDrawable != -1) {
+            layoutParams.setMargins(15, 0, 0, 0)
         }
 
         val textView = TextView(context)
         textView.layoutParams = layoutParams
         textView.text = config.text
-        textView.textSize = config.textSize
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, config.textSize)
         textView.setTextColor(config.textColor)
-        textView.gravity = config.textGravity
         textView.setTypeface(textView.typeface, config.textStyle)
 
         if (!config.isEnabled) {

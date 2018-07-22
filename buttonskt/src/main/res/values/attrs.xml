@@ -51,6 +51,12 @@
         <attr name="bkt_focusedBackgroundColor" format="color" />
         <attr name="bkt_disabledBackgroundColor" format="color" />
 
+        <!-- Border -->
+        <attr name="bkt_borderWidth" format="dimension" />
+        <attr name="bkt_defaultBorderColor" format="color" />
+        <attr name="bkt_focusedBorderColor" format="color" />
+        <attr name="bkt_disabledBorderColor" format="color" />
+
         <!-- Padding -->
         <attr name="bkt_padding" format="dimension" />
         <attr name="bkt_paddingLeft" format="dimension" />

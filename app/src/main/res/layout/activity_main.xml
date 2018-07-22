@@ -17,6 +17,7 @@
         app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
         app:bkt_radius="50dp"
+        app:bkt_borderWidth="2dp"
         app:bkt_text="Sample demo"
         app:bkt_textColor="@android:color/holo_blue_bright"
         app:bkt_textGravity="center_horizontal"

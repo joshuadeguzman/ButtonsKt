@@ -10,8 +10,8 @@ import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.annotation.TargetApi
+import android.graphics.Color
 import android.graphics.drawable.StateListDrawable
-import android.util.Log
 import android.widget.RelativeLayout
 import android.widget.TextView
 import io.jmdg.buttonskt.constants.BktTextPosition
@@ -28,7 +28,6 @@ class ButtonsKtView : RelativeLayout {
 
     constructor(context: Context, buttonsKtConfig: ButtonsKt) : super(context) {
         this.config = buttonsKtConfig
-        Log.e(tag, this.config.text)
         initButtonAttributes()
         initBuilderAttributes()
     }
@@ -86,6 +85,12 @@ class ButtonsKtView : RelativeLayout {
             defaultBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_defaultBackgroundColor, config.defaultBackgroundColor)
             focusedBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_focusedBackgroundColor, config.focusedBackgroundColor)
             disabledBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_disabledBackgroundColor, config.disabledBackgroundColor)
+
+            // Border
+            borderWidth = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_borderWidth, config.borderWidth.toFloat()).toInt()
+            defaultBorderColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_defaultBorderColor, config.defaultBorderColor)
+            focusedBorderColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_focusedBorderColor, config.focusedBorderColor)
+            disabledBorderColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_disabledBorderColor, config.disabledBorderColor)
 
             // Radius
             padding = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_padding, config.padding.toFloat()).toInt()
@@ -155,6 +160,10 @@ class ButtonsKtView : RelativeLayout {
         renderRadius(focusedDrawable)
         renderRadius(disabledDrawable)
 
+        renderBorder(defaultDrawable)
+        renderBorder(disabledDrawable)
+
+
         defaultDrawable.setColor(config.defaultBackgroundColor)
         focusedDrawable.setColor(config.focusedBackgroundColor)
         disabledDrawable.setColor(config.disabledBackgroundColor)
@@ -218,6 +227,26 @@ class ButtonsKtView : RelativeLayout {
                     config.radiusTopRight, config.radiusTopRight,
                     config.radiusBottomRight, config.radiusBottomRight,
                     config.radiusBottomLeft, config.radiusBottomLeft)
+        }
+    }
+
+    private fun renderBorder(gradientDrawable: GradientDrawable) {
+        if (config.borderWidth > 0) {
+            val states = arrayOf(
+                    intArrayOf(android.R.attr.state_pressed),
+                    intArrayOf(android.R.attr.state_focused),
+                    intArrayOf(android.R.attr.enabled),
+                    intArrayOf(-android.R.attr.state_pressed))
+
+            val color = intArrayOf(config.focusedBorderColor, config.focusedBorderColor, config.defaultBorderColor, config.disabledBorderColor)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                gradientDrawable.setStroke(config.borderWidth, ColorStateList(states, color))
+            } else {
+                gradientDrawable.setStroke(config.borderWidth, config.defaultBorderColor)
+                if (!config.isEnabled) {
+                    gradientDrawable.setStroke(config.borderWidth, Color.TRANSPARENT)
+                }
+            }
         }
     }
 

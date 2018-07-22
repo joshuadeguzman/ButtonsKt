@@ -1,5 +1,6 @@
 package io.jmdg.buttonsktapp
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import io.jmdg.buttonskt.ButtonsKtView
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
                 radius = 100f,
                 padding = 70,
                 margin = 15,
+                borderWidth = 10,
+                defaultBorderColor = Color.GRAY,
                 height = BktLayoutParams.WRAP_CONTENT,
                 width = BktLayoutParams.MATCH_PARENT,
                 textPosition = BktTextPosition.CENTER

@@ -22,14 +22,20 @@ data class ButtonsKt(
         internal var isTextAllCaps: Boolean = false,
         internal var textStyle: Int = 0,
 
+        // Layout Control
+        internal var width: Int = BktLayoutParams.WRAP_CONTENT,
+        internal var height: Int = BktLayoutParams.WRAP_CONTENT,
+
         // Background
         internal var defaultBackgroundColor: Int = Color.parseColor("#2c3e50"),
         internal var focusedBackgroundColor: Int = Color.parseColor("#34495e"),
         internal var disabledBackgroundColor: Int = Color.parseColor("#ecf0f1"),
 
-        // Layout Control
-        internal var width: Int = BktLayoutParams.WRAP_CONTENT,
-        internal var height: Int = BktLayoutParams.WRAP_CONTENT,
+        // Border
+        internal var borderWidth: Int = 0,
+        internal var defaultBorderColor: Int = Color.parseColor("#34495e"),
+        internal var focusedBorderColor: Int = Color.TRANSPARENT,
+        internal var disabledBorderColor: Int = Color.TRANSPARENT,
 
         // Margin
         internal var margin: Int = 0,

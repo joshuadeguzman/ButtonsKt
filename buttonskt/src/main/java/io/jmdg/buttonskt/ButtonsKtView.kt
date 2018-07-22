@@ -86,9 +86,14 @@ class ButtonsKtView : RelativeLayout {
             defaultBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_defaultBackgroundColor, config.defaultBackgroundColor)
             focusedBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_focusedBackgroundColor, config.focusedBackgroundColor)
             disabledBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_disabledBackgroundColor, config.disabledBackgroundColor)
-            defaultBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_defaultBackgroundColor, config.disabledBackgroundColor)
 
-            // Shape
+            // Radius
+            padding = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_padding, config.padding.toFloat()).toInt()
+            paddingLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingLeft, config.paddingLeft.toFloat()).toInt()
+            paddingTop = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingTop, config.paddingTop.toFloat()).toInt()
+            paddingRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingRight, config.paddingRight.toFloat()).toInt()
+            paddingBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingBottom, config.paddingBottom.toFloat()).toInt()
+
             radius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radius, config.radius)
             radiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopLeft, config.radiusTopLeft)
             radiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopRight, config.radiusTopRight)
@@ -101,7 +106,7 @@ class ButtonsKtView : RelativeLayout {
 
     private fun renderBuilderConfigurations() {
         // Override layoutParams
-        val layoutParams = RelativeLayout.LayoutParams(config.width,config.height)
+        val layoutParams = RelativeLayout.LayoutParams(config.width, config.height)
 
         // Margin
         if (config.margin > 0) {

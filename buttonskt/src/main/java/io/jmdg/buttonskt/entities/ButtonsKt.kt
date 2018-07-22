@@ -31,19 +31,19 @@ data class ButtonsKt(
         internal var width: Int = BktLayoutParams.WRAP_CONTENT,
         internal var height: Int = BktLayoutParams.WRAP_CONTENT,
 
-        // Padding
-        internal var padding: Int = -1,
-        internal var paddingLeft: Int = -1,
-        internal var paddingTop: Int = -1,
-        internal var paddingRight: Int = -1,
-        internal var paddingBottom: Int = -1,
-
         // Margin
         internal var margin: Int = 0,
         internal var marginLeft: Int = 0,
         internal var marginTop: Int = 0,
         internal var marginRight: Int = 0,
         internal var marginBottom: Int = 0,
+
+        // Padding
+        internal var padding: Int = -1,
+        internal var paddingLeft: Int = -1,
+        internal var paddingTop: Int = -1,
+        internal var paddingRight: Int = -1,
+        internal var paddingBottom: Int = -1,
 
         // Radius
         internal var radius: Float = 0f,

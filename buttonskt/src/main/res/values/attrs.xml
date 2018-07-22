@@ -51,7 +51,14 @@
         <attr name="bkt_focusedBackgroundColor" format="color" />
         <attr name="bkt_disabledBackgroundColor" format="color" />
 
-        <!-- Shape -->
+        <!-- Padding -->
+        <attr name="bkt_padding" format="dimension" />
+        <attr name="bkt_paddingLeft" format="dimension" />
+        <attr name="bkt_paddingTop" format="dimension" />
+        <attr name="bkt_paddingRight" format="dimension" />
+        <attr name="bkt_paddingBottom" format="dimension" />
+
+        <!-- Radius -->
         <attr name="bkt_radius" format="dimension" />
         <attr name="bkt_radiusTopLeft" format="dimension" />
         <attr name="bkt_radiusTopRight" format="dimension" />

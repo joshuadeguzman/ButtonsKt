@@ -5,6 +5,27 @@
         <attr name="bkt_isEnabled" format="boolean" />
         <attr name="bkt_isRippleEffectEnabled" format="boolean" />
 
+        <!-- Icon styles -->
+        <attr name="bkt_iconDrawable" format="reference"/>
+        <attr name="bkt_iconTint" format="color"/>
+        <attr name="bkt_disabledIconTint" format="color"/>
+        <attr name="bkt_iconWidth" format="dimension"/>
+        <attr name="bkt_iconHeight" format="dimension"/>
+
+        <!-- Icon Margin -->
+        <attr name="bkt_iconMargin" format="dimension"/>
+        <attr name="bkt_iconMarginLeft" format="dimension"/>
+        <attr name="bkt_iconMarginTop" format="dimension"/>
+        <attr name="bkt_iconMarginRight" format="dimension"/>
+        <attr name="bkt_iconMarginBottom" format="dimension"/>
+
+        <!-- Icon Padding -->
+        <attr name="bkt_iconPadding" format="dimension"/>
+        <attr name="bkt_iconPaddingLeft" format="dimension"/>
+        <attr name="bkt_iconPaddingTop" format="dimension"/>
+        <attr name="bkt_iconPaddingRight" format="dimension"/>
+        <attr name="bkt_iconPaddingBottom" format="dimension"/>
+
         <!-- Text Styles -->
         <attr name="bkt_text" format="string" />
         <attr name="bkt_textSize" format="dimension" />

@@ -12,6 +12,7 @@ import android.os.Build
 import android.annotation.TargetApi
 import android.graphics.Color
 import android.graphics.drawable.StateListDrawable
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import io.jmdg.buttonskt.constants.BktTextPosition
@@ -51,6 +52,8 @@ class ButtonsKtView : RelativeLayout {
         val typedArray: TypedArray = context!!.obtainStyledAttributes(attrs, R.styleable.ButtonsKtView, 0, 0)
         loadAttributes(typedArray)
         typedArray.recycle()
+
+        renderXMLBuilderConfigurations()
     }
 
     private fun initButtonAttributes() {
@@ -58,13 +61,41 @@ class ButtonsKtView : RelativeLayout {
         this.isFocusable = true
     }
 
-    private fun loadAttributes(typedArray: TypedArray) {
+    private fun renderXMLBuilderConfigurations() {
+        // Override padding
+        if (config.padding > 0) {
+            this.setPadding(config.padding, config.padding, config.padding, config.padding)
+        } else {
+            this.setPadding(config.paddingLeft, config.paddingTop, config.paddingRight, config.paddingBottom)
+        }
+    }
 
+    private fun loadAttributes(typedArray: TypedArray) {
         // Override default configurations when attributes is set via XML
         defaultConfig {
             // Configuration
             isEnabled = typedArray.getBoolean(R.styleable.ButtonsKtView_bkt_isEnabled, true)
             isRippleEffectEnabled = typedArray.getBoolean(R.styleable.ButtonsKtView_bkt_isRippleEffectEnabled, true)
+
+            // Icon Resource
+            iconDrawable = typedArray.getResourceId(R.styleable.ButtonsKtView_bkt_iconDrawable, -1)
+            iconTint = typedArray.getColor(R.styleable.ButtonsKtView_bkt_iconTint, config.iconTint)
+            iconWidth = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconWidth, config.iconWidth.toFloat()).toInt()
+            iconHeight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconHeight, config.iconHeight.toFloat()).toInt()
+
+            // Icon Margin
+            iconMargin = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMargin, config.iconMargin.toFloat()).toInt()
+            iconMarginLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMarginLeft, config.iconMarginLeft.toFloat()).toInt()
+            iconMarginTop = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMarginTop, config.iconMarginTop.toFloat()).toInt()
+            iconMarginRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMarginRight, config.iconMarginRight.toFloat()).toInt()
+            iconMarginBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconMarginBottom, config.iconMarginBottom.toFloat()).toInt()
+
+            // Icon Padding
+            iconPadding = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconPadding, config.iconPadding.toFloat()).toInt()
+            iconPaddingLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconPaddingLeft, config.iconPaddingLeft.toFloat()).toInt()
+            iconPaddingTop = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconPaddingTop, config.iconPaddingTop.toFloat()).toInt()
+            iconPaddingRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconPaddingRight, config.iconPaddingRight.toFloat()).toInt()
+            iconPaddingBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_iconPaddingBottom, config.iconPaddingBottom.toFloat()).toInt()
 
             // Text
             text = if (typedArray.getString(R.styleable.ButtonsKtView_bkt_text) != null) {
@@ -92,13 +123,14 @@ class ButtonsKtView : RelativeLayout {
             focusedBorderColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_focusedBorderColor, config.focusedBorderColor)
             disabledBorderColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_disabledBorderColor, config.disabledBorderColor)
 
-            // Radius
+            // Padding
             padding = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_padding, config.padding.toFloat()).toInt()
             paddingLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingLeft, config.paddingLeft.toFloat()).toInt()
             paddingTop = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingTop, config.paddingTop.toFloat()).toInt()
             paddingRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingRight, config.paddingRight.toFloat()).toInt()
             paddingBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingBottom, config.paddingBottom.toFloat()).toInt()
 
+            // Radius
             radius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radius, config.radius)
             radiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopLeft, config.radiusTopLeft)
             radiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopRight, config.radiusTopRight)
@@ -153,7 +185,43 @@ class ButtonsKtView : RelativeLayout {
     }
 
     private fun renderSubViews() {
+        renderIconView()
         renderTextView()
+    }
+
+    private fun renderIconView() {
+        if (config.iconDrawable != -1) {
+            val layoutParams = RelativeLayout.LayoutParams(config.iconWidth, config.iconHeight)
+            layoutParams.addRule(RelativeLayout.CENTER_VERTICAL)
+
+            // Icon Margin
+            if (config.iconMargin > 0) {
+                layoutParams.setMargins(config.iconMargin, config.iconMargin, config.iconMargin, config.iconMargin)
+            } else {
+                layoutParams.setMargins(config.iconMarginLeft, config.iconMarginTop, config.iconMarginRight, config.iconMarginBottom)
+            }
+
+            val imageView = ImageView(context)
+            imageView.layoutParams = layoutParams
+            imageView.setImageResource(config.iconDrawable)
+            imageView.setColorFilter(config.iconTint)
+
+
+            // Icon Padding
+            if (config.iconPadding > 0) {
+                imageView.setPadding(config.iconPadding, config.iconPadding, config.iconPadding, config.iconPadding)
+            } else {
+                imageView.setPadding(config.iconPaddingLeft, config.iconPaddingTop, config.iconPaddingRight, config.iconPaddingBottom)
+            }
+
+
+            // If disabled
+            if(!config.isEnabled){
+                imageView.setColorFilter(config.disabledIconTint)
+            }
+
+            addView(imageView)
+        }
     }
 
     private fun renderTextView() {
@@ -182,7 +250,7 @@ class ButtonsKtView : RelativeLayout {
             textView.setTextColor(config.disabledTextColor)
         }
 
-        this.addView(textView)
+        addView(textView)
     }
 
     private fun renderBackground(defaultDrawable: GradientDrawable, focusedDrawable: GradientDrawable, disabledDrawable: GradientDrawable) {

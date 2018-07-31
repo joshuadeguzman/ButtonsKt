@@ -3,8 +3,33 @@
 > A customisable button kit for Android
 
 ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations 
-(borders & outlines, radius & corners,background color w/ states and easy implementation of ripple effect!, icons, and more!) 
-whilst being lightweight, plus runtime xml selection of icons from FontAwesome!
+(icons, borders & outlines, corner radius, background and more!) 
+whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
+
+#### FEATURES
+###### Icons
+* Set Icons via a drawable reference or
+* Set Icons via iconResource (selection of FontAwesome Icons)
+* Initialised FontAwesome Configuration (Only 3 icons right now)
+* Icon Tint Colors (Enabled, Disabled)
+* Layout (IconArea = WxH / 1:1, Margin, Padding)
+
+###### Shape
+* Corner Radius
+* Border Outline
+* Layout (Override default padding)
+
+###### Background
+* Easy ripple effect integration via drawable colors (Default, Focused, Disabled)
+* Support for SDK below Lollipop: StateListDrawable instead of RippleDrawable
+
+###### Text
+* Text Customization (Size, Alignment, Gravity, Style)
+* TextColor (Default, Disabled)
+
+###### Additional
+* isEnabled & isRippleEffectEnabled
+* Layout (Can set padding & margin via configuration instance)
 
 #### INSTALLATION
 
@@ -23,12 +48,17 @@ dependencies {
 }
 ```
 
-#### USAGE
+#### BASIC USAGE
 > __TIP__: Load URI xmlns:app="http://schemas.android.com/apk/res-auto" to render runtime custom attributes
+
+> __TIP__: See ``DOCS`` for more information.
+
 ```XML
 <RootLayout
 ...
-xmlns:app="http://schemas.android.com/apk/res-auto"/>
+xmlns:app="http://schemas.android.com/apk/res-auto"
+...
+/>
 
   <io.jmdg.buttonskt.ButtonsKtView
         android:id="@+id/bkt_demo_xml_2"
@@ -46,7 +76,6 @@ xmlns:app="http://schemas.android.com/apk/res-auto"/>
         app:bkt_textColor="@android:color/white"
         app:bkt_textSize="7dp"
         app:bkt_textStyle="bold" />
-
 ...
 </RootLayout>
 

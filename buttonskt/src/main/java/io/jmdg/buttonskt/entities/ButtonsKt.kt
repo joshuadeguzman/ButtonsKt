@@ -44,6 +44,7 @@ data class ButtonsKt(
         internal var textPosition: Int = BktTextPosition.CENTER,
         internal var isTextAllCaps: Boolean = false,
         internal var textStyle: Int = 0,
+        internal var textDefaultFont: Int = 7,
 
         // Layout Control
         internal var width: Int = BktLayoutParams.WRAP_CONTENT,

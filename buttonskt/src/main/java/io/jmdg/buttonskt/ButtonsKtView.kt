@@ -19,7 +19,6 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import io.jmdg.buttonskt.internal.helpers.ResolutionUtil
 import android.graphics.Typeface
-import android.util.Log
 import android.view.Gravity
 import io.jmdg.buttonskt.internal.ButtonKtSingleton
 
@@ -117,6 +116,7 @@ class ButtonsKtView : LinearLayout {
             textPosition = typedArray.getInteger(R.styleable.ButtonsKtView_bkt_textPosition, config.textPosition)
             isTextAllCaps = typedArray.getBoolean(R.styleable.ButtonsKtView_bkt_textAllCaps, false)
             textStyle = typedArray.getInteger(R.styleable.ButtonsKtView_bkt_textStyle, config.textStyle)
+            textDefaultFont = typedArray.getInteger(R.styleable.ButtonsKtView_bkt_defaultFont, config.textDefaultFont)
 
             // Background
             defaultBackgroundColor = typedArray.getColor(R.styleable.ButtonsKtView_bkt_defaultBackgroundColor, config.defaultBackgroundColor)
@@ -225,7 +225,7 @@ class ButtonsKtView : LinearLayout {
 
         // Render TypeFace
         // Font Awesome
-        if(ButtonKtSingleton.typeface == null){
+        if (ButtonKtSingleton.typeface == null) {
             ButtonKtSingleton.typeface = Typeface.createFromAsset(context.assets, "fontawesome_solid.ttf")
         }
 
@@ -290,11 +290,13 @@ class ButtonsKtView : LinearLayout {
         textView.text = config.text
         textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, config.textSize)
         textView.setTextColor(config.textColor)
-        textView.setTypeface(textView.typeface, config.textStyle)
 
         if (!config.isEnabled) {
             textView.setTextColor(config.disabledTextColor)
         }
+
+        // Render font
+        textView.typeface = getTypeFace(textView)
 
         addView(textView)
     }
@@ -342,6 +344,14 @@ class ButtonsKtView : LinearLayout {
                 }
             }
         }
+    }
+
+    private fun getTypeFace(textView: TextView): Typeface {
+        val fontsArray = resources.getStringArray(R.array.DefaultFontResource)
+        if (fontsArray.isEmpty()) {
+            return Typeface.create(textView.typeface, config.textStyle)
+        }
+        return Typeface.createFromAsset(context.assets, fontsArray[config.textDefaultFont])
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

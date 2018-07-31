@@ -40,6 +40,20 @@
         <attr name="bkt_disabledTextColor" format="color" />
         <attr name="bkt_textAllCaps" format="boolean" />
 
+        <!-- TextFont -->
+        <attr name="bkt_defaultFont" format="enum">
+            <enum name="opensans_bold" value="0" />
+            <enum name="opensans_bolditalic" value="1" />
+            <enum name="opensans_extrabold" value="2" />
+            <enum name="opensans_extrabolditalic" value="3" />
+            <enum name="opensans_italic" value="4" />
+            <enum name="opensans_light" value="5" />
+            <enum name="opensans_lightitalic" value="6" />
+            <enum name="opensans_regular" value="7" />
+            <enum name="opensans_semibold" value="8" />
+            <enum name="opensans_semibolditalic" value="9" />
+        </attr>
+
         <!-- https://developer.android.com/reference/android/R.attr#textStyle -->
         <attr name="bkt_textStyle" format="enum">
             <enum name="bold" value="1" />

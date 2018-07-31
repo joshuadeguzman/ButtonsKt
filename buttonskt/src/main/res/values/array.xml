@@ -12,4 +12,16 @@
         <!-- x-ray -->
         <item>&#xf497;</item>
     </string-array>
+    <string-array name="DefaultFontResource">
+        <item>opensans_bold.ttf</item>
+        <item>opensans_bolditalic.ttf</item>
+        <item>opensans_extrabold.ttf</item>
+        <item>opensans_extrabolditalic.ttf</item>
+        <item>opensans_italic.ttf</item>
+        <item>opensans_light.ttf</item>
+        <item>opensans_lightitalic.ttf</item>
+        <item>opensans_regular.ttf</item>
+        <item>opensans_semibold.ttf</item>
+        <item>opensans_semibolditalic.ttf</item>
+    </string-array>
 </resources>

@@ -19,11 +19,7 @@ class MainActivity : AppCompatActivity() {
         val configuration = ButtonsKt(
                 text = "DECLARE VIA CODE",
                 textSize = 18f,
-                textStyle = BktTextStyle.BOLD,
-                radius = 30f,
-                padding = 50,
-                marginTop = 25,
-                textPosition = BktTextPosition.LEFT
+                textStyle = BktTextStyle.BOLD
         )
 
         // Create ButtonsKtView with the desired configuration instance

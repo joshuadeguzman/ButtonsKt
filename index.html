@@ -1,0 +1,219 @@
+---
+layout: default
+title: Home
+description: A customisable button kit for Android
+isHome: true
+---
+
+<section class="bs-docs-section">
+  <h1 id="overview" class="page-header">Overview</h1>
+
+  <blockquote>
+    ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations 
+    (icons, borders & outlines, corner radius, background and more!) 
+    whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
+  </blockquote>
+
+  <h3 id="features">Features</h3>
+  
+  <h5>Container</h5>
+  <ul>
+    <li>Corner Radius</li>
+    <li>Border (width, color)</li>
+    <li>Layout (padding, margin)</li>
+  </ul>
+  
+  <h5>Background</h5>
+  <ul>
+    <li>Easy Ripple Effect Integration (defaultBackgroundColor, focusedBackgroundColor, disabledBackgroundColor)</li>
+    <li>Support for SDK below API Lollipop (StateListDrawable instead of RippleDrawable)</li>
+  </ul>
+  
+  <h5>Icons</h5>
+  <ul>
+    <li>Choose from your resource directory</li>
+    <li>Choose from FontAwesome Icons (ttf based, not images!)</li>
+    <li>Tint (enabledColor & disabledColor)</li>
+    <li>Layout (iconArea, iconMargin, iconPadding)</li>
+  </ul>
+
+  <h5>Text</h5>
+  <ul>
+    <li>Choose font your resource directory</li>
+    <li>Choose from the available fonts (eg. OpenSans, Gilroy, ...)</li>
+    <li>Style (size, alignment, gravity, style, isTextAllCaps)</li>
+    <li>Color (textColor, disabledTextColor)</li>
+  </ul>
+  
+  <h5>Additional Overrides</h5>
+  <li>isEnabled</li>
+  <li>isRippleEffectEnabled</li>
+
+  <h3 id="anatomy">Anatomy</h3>
+  <li>Based on Google's Android Material Design</li>
+  <img src="assets/images/anatomy.png" alt="anatomy">
+  <ol>
+    <li>Icon</li>
+    <li>Text</li>
+    <li>Background</li>
+    <li>Border (Outline)</li>
+    <li>Ripple Effect</li>
+  </ol>
+</section>
+
+
+<section class="bs-docs-section">
+  <h1 id="installation" class="page-header">Installation</h1>
+
+  <h3 id="project_level">Project Level Gradle</h3>
+  <!-- @formatter:off -->
+  {% highlight gradle %}
+  repositories {
+      maven { url 'https://jitpack.io' }
+  }
+  {% endhighlight %}
+  <!-- @formatter:on -->
+
+  <h3 id="module_level">Module Level Gradle</h3>  
+  <!-- @formatter:off -->
+  {% highlight gradle %}
+  dependencies {
+    // Replace version with release version, e.g. 1.0.0-alpha, -SNAPSHOT
+    implementation "io.jmdg:buttonskt:[VERSION]"
+  }
+  {% endhighlight %}
+  <!-- @formatter:on -->
+  
+
+  <h2 id="configuration">Configuration</h2>
+  <p>Attributes available on the current release</p>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>XML Attribute</th>
+          <th>Kotlin</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Corner Radius</td>
+          <td>bkt_cornerRadius</td>
+          <td>cornerRadius</td>
+          <td>10dp</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section class="bs-docs-section">
+  <h1 id="usage" class="page-header">Usage</h1>
+
+  <h3 id="declaration_via_xml">XML Declaration</h3>
+  <p>
+    Load URI <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> to render runtime custom attributes
+  </p>
+
+  <!-- @formatter:off -->
+  {% highlight xml %}
+  <RootLayout
+  ...
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  ...
+  />
+
+    <io.jmdg.buttonskt.ButtonsKtView
+          android:id="@+id/bkt_demo_xml"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="10dp"
+          android:textAlignment="center"
+          ...
+          app:bkt_isEnabled="false"
+          app:bkt_isRippleEffectEnabled="true"
+          app:bkt_cornerRadius="10dp"
+          app:bkt_borderWidth="2dp"
+          app:bkt_defaultBackgroundColor="@color/colorPrimary"
+          app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
+          app:bkt_focusedBackgroundColor="@color/colorPrimaryDisabled"
+          app:bkt_text="ButtonsKt"
+          app:bkt_textSize="12dp"
+          app:bkt_textStyle="normal"
+          app:bkt_textAllCaps="false"
+          app:bkt_defaultFont="opensans_light"
+          app:bkt_textColor="@android:color/white"
+          app:bkt_disabledTextColor="@android:color/darker_gray"
+          app:bkt_iconResource="fa_cloud_download_alt"
+          app:bkt_iconArea="30dp"
+          app:bkt_iconTint="@color/colorAccent"
+          app:bkt_iconPadding="0dp"
+          app:bkt_iconMargin="10dp"
+          ... 
+          />
+  ...
+  </RootLayout>
+  {% endhighlight %}
+  <!-- @formatter:on -->
+
+  <p>
+    Configure <code>isEnabled</code> instead of the default view's <code>setEnabled</code> to allow ButtonsKt engine render the desired custom configurations
+    (eg. disabledBackgroundColor, disabledTextColor)
+  </p>
+
+  <h3 id="declaration_via_code">Declaration via Code</h3>
+  <p>
+    Creating a configuration instance
+  </p>
+
+  <!-- @formatter:off -->
+  {% highlight kotlin %}
+  override fun onCreate(savedInstanceState: Bundle?) {
+      ...
+      // Configuration instance
+      // You are opt to change specific & named configurations
+      // This configuration can be reused for adding multiple views programatically
+      val configuration = ButtonsKt(
+              text = "DECLARED VIA CODE",
+              textSize = 18f,
+              textStyle = BktTextStyle.BOLD,
+              ...
+      )
+      ...
+  }
+{% endhighlight %}
+<!-- @formatter:on -->
+
+<p>
+  Passing the configuration instance
+</p>
+
+<!-- @formatter:off -->
+{% highlight kotlin %}
+override fun onCreate(savedInstanceState: Bundle?) {
+    ...
+    // Configuration instance
+    // You are opt to change specific & named configurations
+    // This configuration can be reused for adding multiple views programatically
+    val configuration = ButtonsKt(
+            text = "DECLARED VIA CODE",
+            textSize = 18f,
+            textStyle = BktTextStyle.BOLD,
+            ...
+    )
+
+    // Create ButtonsKtView with the desired configuration instance
+    val buttonsKtView = ButtonsKtView(this, configuration)
+
+    // Add custom view
+    rl_main.addView(buttonsKtView)
+    ...
+}
+{% endhighlight %}
+<!-- @formatter:on -->
+<p><code>configuration</code> instance can be passed to be reused when adding more views programmatically</p>
+
+</section>

@@ -13,29 +13,42 @@ ButtonsKt eliminates boilterplate xml files through ease of customization by exp
 whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
 
 #### FEATURES
-###### Icons
-* Set Icons via a drawable reference or
-* Set Icons via iconResource (selection of FontAwesome Icons)
-* Initialised FontAwesome Configuration (Only 3 icons right now)
-* Icon Tint Colors (Enabled, Disabled)
-* Layout (IconArea = WxH / 1:1, Margin, Padding)
-
-###### Shape
+###### Container
 * Corner Radius
-* Border Outline
-* Layout (Override default padding)
+* Border (width, color)
+* Layout (padding, margin)
 
 ###### Background
 * Easy ripple effect integration via drawable colors (Default, Focused, Disabled)
 * Support for SDK below Lollipop: StateListDrawable instead of RippleDrawable
 
-###### Text
-* Text Customization (Size, Alignment, Gravity, Style)
-* TextColor (Default, Disabled)
+###### Icons
+* Choose from your resource directory
+* Choose from FontAwesome Icons (ttf based, not images!)
+* Tint (enabledColor & disabledColor)
+* Layout (iconArea, iconMargin, iconPadding)
 
-###### Additional
-* isEnabled & isRippleEffectEnabled
-* Layout (Can set padding & margin via configuration instance)
+###### Text
+* Choose font your resource directory
+* Choose from the available fonts (eg. OpenSans, Gilroy, ...)
+* Style (size, alignment, gravity, style, isTextAllCaps)
+* Color (textColor, disabledTextColor)
+
+###### Additional Overrides
+* isEnabled
+* isRippleEffectEnabled
+> For more info, refer to [DOCS](https://jmdg.io/ButtonsKt)
+
+#### BUTTONSKT ANATOMY
+> Based on Google's Android Material Design
+
+![anatomy](https://i.imgur.com/jNhcAZI.png)
+
+1. Icon
+2. Text
+3. Background
+4. Border (Outline)
+5. Ripple Effect
 
 #### INSTALLATION
 
@@ -57,8 +70,6 @@ dependencies {
 #### BASIC USAGE
 > __TIP__: Load URI xmlns:app="http://schemas.android.com/apk/res-auto" to render runtime custom attributes
 
-> __TIP__: See ``DOCS`` for more information.
-
 ```XML
 <RootLayout
 ...
@@ -72,16 +83,28 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textAlignment="center"
+        ...
+        app:bkt_isEnabled="false"
+        app:bkt_isRippleEffectEnabled="true"
+        app:bkt_cornerRadius="10dp"
         app:bkt_borderWidth="2dp"
         app:bkt_defaultBackgroundColor="@color/colorPrimary"
-        app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
-        app:bkt_iconResource="fa_cloud_download_alt"
-        app:bkt_radius="10dp"
-        app:bkt_text="DOWNLOAD"
+        app:bkt_focusedBackgroundColor="@color/colorPrimaryDisabled"
+        app:bkt_text="ButtonsKt"
+        app:bkt_textSize="12dp"
+        app:bkt_textStyle="normal"
+        app:bkt_textAllCaps="false"
+        app:bkt_defaultFont="opensans_light"
         app:bkt_textColor="@android:color/white"
-        app:bkt_textSize="7dp"
-        app:bkt_textStyle="bold" />
+        app:bkt_disabledTextColor="@android:color/darker_gray"
+        app:bkt_iconResource="fa_cloud_download_alt"
+        app:bkt_iconArea="30dp"
+        app:bkt_iconTint="@color/colorAccent"
+        app:bkt_iconPadding="0dp"
+        app:bkt_iconMargin="10dp"
+        ... 
+        />
 ...
 </RootLayout>
 
@@ -98,7 +121,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             text = "DECLARED VIA CODE",
             textSize = 18f,
             textStyle = BktTextStyle.BOLD,
-            radius = 30f,
+            ...
     )
 
     // Create ButtonsKtView with the desired configuration instance
@@ -109,11 +132,6 @@ override fun onCreate(savedInstanceState: Bundle?) {
     ...
 }
 ```
-
-#### BUTTONSKT ANATOMY
-> Based on Google's Android Material Design
-
-![anatomy](https://i.imgur.com/jNhcAZI.png)
 
 #### META
 

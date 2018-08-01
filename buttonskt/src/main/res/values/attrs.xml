@@ -115,10 +115,10 @@
         <attr name="bkt_paddingBottom" format="dimension" />
 
         <!-- Radius -->
-        <attr name="bkt_radius" format="dimension" />
-        <attr name="bkt_radiusTopLeft" format="dimension" />
-        <attr name="bkt_radiusTopRight" format="dimension" />
-        <attr name="bkt_radiusBottomLeft" format="dimension" />
-        <attr name="bkt_radiusBottomRight" format="dimension" />
+        <attr name="bkt_cornerRadius" format="dimension" />
+        <attr name="bkt_cornerRadiusTopLeft" format="dimension" />
+        <attr name="bkt_cornerRadiusTopRight" format="dimension" />
+        <attr name="bkt_cornerRadiusBottomLeft" format="dimension" />
+        <attr name="bkt_cornerRadiusBottomRight" format="dimension" />
     </declare-styleable>
 </resources>

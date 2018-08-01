@@ -27,7 +27,6 @@
         app:bkt_disabledTextColor="@android:color/darker_gray"
         app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
         app:bkt_iconResource="fa_cloud_download_alt"
-        app:bkt_radius="10dp"
         app:bkt_text="DOWNLOAD"
         app:bkt_textColor="@android:color/white"
         app:bkt_textSize="7dp"

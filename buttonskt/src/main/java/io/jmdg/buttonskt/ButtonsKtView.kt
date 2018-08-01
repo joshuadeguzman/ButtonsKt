@@ -137,11 +137,11 @@ class ButtonsKtView : LinearLayout {
             paddingBottom = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_paddingBottom, config.paddingBottom.toFloat()).toInt()
 
             // Radius
-            radius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radius, ResolutionUtil.dpToPx(context, config.radius).toFloat())
-            radiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopLeft, ResolutionUtil.dpToPx(context, config.radiusTopLeft).toFloat())
-            radiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusTopRight, ResolutionUtil.dpToPx(context, config.radiusTopRight).toFloat())
-            radiusBottomLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomLeft, ResolutionUtil.dpToPx(context, config.radiusBottomLeft).toFloat())
-            radiusBottomRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_radiusBottomRight, ResolutionUtil.dpToPx(context, config.radiusBottomRight).toFloat())
+            cornerRadius = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadius, ResolutionUtil.dpToPx(context, config.cornerRadius).toFloat())
+            cornerRadiusTopLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadiusTopLeft, ResolutionUtil.dpToPx(context, config.cornerRadiusTopLeft).toFloat())
+            cornerRadiusTopRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadiusTopRight, ResolutionUtil.dpToPx(context, config.cornerRadiusTopRight).toFloat())
+            cornerRadiusBottomLeft = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadiusBottomLeft, ResolutionUtil.dpToPx(context, config.cornerRadiusBottomLeft).toFloat())
+            cornerRadiusBottomRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadiusBottomRight, ResolutionUtil.dpToPx(context, config.cornerRadiusBottomRight).toFloat())
         }
 
         renderBackground()
@@ -315,14 +315,14 @@ class ButtonsKtView : LinearLayout {
     }
 
     private fun renderRadius(gradientDrawable: GradientDrawable) {
-        if (config.radius > 0) {
-            gradientDrawable.cornerRadius = config.radius
+        if (config.cornerRadius > 0) {
+            gradientDrawable.cornerRadius = config.cornerRadius
         } else {
             gradientDrawable.cornerRadii = floatArrayOf(
-                    config.radiusTopLeft, config.radiusTopLeft,
-                    config.radiusTopRight, config.radiusTopRight,
-                    config.radiusBottomRight, config.radiusBottomRight,
-                    config.radiusBottomLeft, config.radiusBottomLeft)
+                    config.cornerRadiusTopLeft, config.cornerRadiusTopLeft,
+                    config.cornerRadiusTopRight, config.cornerRadiusTopRight,
+                    config.cornerRadiusBottomRight, config.cornerRadiusBottomRight,
+                    config.cornerRadiusBottomLeft, config.cornerRadiusBottomLeft)
         }
     }
 

@@ -76,9 +76,9 @@ data class ButtonsKt(
         internal var paddingBottom: Int = 30,
 
         // Radius
-        internal var radius: Float = 10f,
-        internal var radiusTopLeft: Float = 0f,
-        internal var radiusTopRight: Float = 0f,
-        internal var radiusBottomLeft: Float = 0f,
-        internal var radiusBottomRight: Float = 0f
+        internal var cornerRadius: Float = 10f,
+        internal var cornerRadiusTopLeft: Float = 0f,
+        internal var cornerRadiusTopRight: Float = 0f,
+        internal var cornerRadiusBottomLeft: Float = 0f,
+        internal var cornerRadiusBottomRight: Float = 0f
 )

@@ -2,6 +2,12 @@
 ## ButtonsKt
 > A customisable button kit for Android
 
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.2.51-green.svg?style=flat-square)](http://kotlinlang.org)
+[![RxJava](https://img.shields.io/badge/Support-27.1.1-6ab344.svg?style=flat-square)](https://github.com/ReactiveX/RxJava/releases/tag/v2.1.10)
+[![Build Status](https://img.shields.io/travis/joshuadeguzman/ButtonsKt.svg?style=flat-square)](https://travis-ci.org/joshuadeguzman/ButtonsKt)
+[![GitHub (pre-)release](https://img.shields.io/github/release/joshuadeguzman/ButtonsKt/all.svg?style=flat-square)
+](./../../releases)
+
 ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations 
 (icons, borders & outlines, corner radius, background and more!) 
 whilst being lightweight, plus runtime xml selection of icons from FontAwesome.

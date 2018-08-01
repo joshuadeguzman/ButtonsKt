@@ -1,18 +1,9 @@
-# username/repository
 id: joshuadeguzman/ButtonsKt
-# name of the software
 name: ButtonsKt
-# licence of the software
+url: https://jmdg.io/ButtonsKt/
 license: MIT License
-licenseUrl: http://opensource.org/licenses/MIT
-# extension of the favicon, blank to disable
+licenseUrl: https://opensource.org/licenses/MIT
 favicon: png
-
-# download button
-# if download.popup is true, the download button will open a popup with several download options
-# otherwise it will simply open download.url and other options are ignored
-# if download.popup is true, any option is optional
-# download.cdn.img is optional
 download:
   popup: false
   url: https://github.com/joshuadeguzman/ButtonsKt/releases

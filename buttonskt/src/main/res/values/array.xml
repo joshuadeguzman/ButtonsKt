@@ -23,5 +23,13 @@
         <item>opensans_regular.ttf</item>
         <item>opensans_semibold.ttf</item>
         <item>opensans_semibolditalic.ttf</item>
+        <item>champagne_bold.ttf</item>
+        <item>champagne_bolditalic.ttf</item>
+        <item>champagne_italic.ttf</item>
+        <item>champagne_regular.ttf</item>
+        <item>gilroy_bold.otf</item>
+        <item>gilroy_medium.otf</item>
+        <item>gilroy_regular.otf</item>
+        <item>gilroy_thin.otf</item>
     </string-array>
 </resources>

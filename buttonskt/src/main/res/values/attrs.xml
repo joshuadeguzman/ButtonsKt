@@ -52,6 +52,14 @@
             <enum name="opensans_regular" value="7" />
             <enum name="opensans_semibold" value="8" />
             <enum name="opensans_semibolditalic" value="9" />
+            <enum name="champagne_bold" value="10" />
+            <enum name="champagne_bolditalic" value="11" />
+            <enum name="champagne_italic" value="12" />
+            <enum name="champagne_regular" value="13" />
+            <enum name="gilroy_bold" value="14" />
+            <enum name="gilroy_medium" value="15" />
+            <enum name="gilroy_regular" value="16" />
+            <enum name="gilroy_thin" value="17" />
         </attr>
 
         <!-- https://developer.android.com/reference/android/R.attr#textStyle -->

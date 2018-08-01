@@ -19,8 +19,8 @@ whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
 * Layout (padding, margin)
 
 ###### Background
-* Easy ripple effect integration via drawable colors (Default, Focused, Disabled)
-* Support for SDK below Lollipop: StateListDrawable instead of RippleDrawable
+* Easy Ripple Effect Integration (defaultBackgroundColor, focusedBackgroundColor, disabledBackgroundColor)
+* Support for SDK below API Lollipop (StateListDrawable instead of RippleDrawable)
 
 ###### Icons
 * Choose from your resource directory

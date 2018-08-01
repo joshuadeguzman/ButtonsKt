@@ -13,29 +13,30 @@ ButtonsKt eliminates boilterplate xml files through ease of customization by exp
 whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
 
 #### FEATURES
-###### Icons
-* Set Icons via a drawable reference or
-* Set Icons via iconResource (selection of FontAwesome Icons)
-* Initialised FontAwesome Configuration (Only 3 icons right now)
-* Icon Tint Colors (Enabled, Disabled)
-* Layout (IconArea = WxH / 1:1, Margin, Padding)
-
-###### Shape
+###### Container
 * Corner Radius
-* Border Outline
-* Layout (Override default padding)
+* Border (width, color)
+* Layout (padding, margin)
 
 ###### Background
 * Easy ripple effect integration via drawable colors (Default, Focused, Disabled)
 * Support for SDK below Lollipop: StateListDrawable instead of RippleDrawable
 
-###### Text
-* Text Customization (Size, Alignment, Gravity, Style)
-* TextColor (Default, Disabled)
+###### Icons
+* Choose from your resource file 
+* Choose from FontAwesome Icons (ttf based, not images!)
+* Tint (enabledColor & disabledColor)
+* Layout (iconArea, iconMargin, iconPadding)
 
-###### Additional
-* isEnabled & isRippleEffectEnabled
-* Layout (Can set padding & margin via configuration instance)
+###### Text
+* Choose from the available fonts (eg. OpenSans, Gilroy, ...)
+* Style (size, alignment, gravity, style)
+* Color (textColor, disabledTextColor)
+
+###### Additional Overrides
+* isEnabled
+* isRippleEffectEnabled
+> For more info, refer to [DOCS](https://jmdg.io/ButtonsKt)
 
 #### INSTALLATION
 

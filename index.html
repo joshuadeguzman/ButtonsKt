@@ -9,26 +9,26 @@ isHome: true
   <h1 id="overview" class="page-header">Overview</h1>
 
   <blockquote>
-    ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations 
-    (icons, borders & outlines, corner radius, background and more!) 
+    ButtonsKt eliminates boilterplate xml files through ease of customization by exposing button customizations
+    (icons, borders & outlines, corner radius, background and more!)
     whilst being lightweight, plus runtime xml selection of icons from FontAwesome.
   </blockquote>
 
   <h3 id="features">Features</h3>
-  
+
   <h5>Container</h5>
   <ul>
     <li>Corner Radius</li>
     <li>Border (width, color)</li>
     <li>Layout (padding, margin)</li>
   </ul>
-  
+
   <h5>Background</h5>
   <ul>
     <li>Easy Ripple Effect Integration (defaultBackgroundColor, focusedBackgroundColor, disabledBackgroundColor)</li>
     <li>Support for SDK below API Lollipop (StateListDrawable instead of RippleDrawable)</li>
   </ul>
-  
+
   <h5>Icons</h5>
   <ul>
     <li>Choose from your resource directory</li>
@@ -44,7 +44,7 @@ isHome: true
     <li>Style (size, alignment, gravity, style, isTextAllCaps)</li>
     <li>Color (textColor, disabledTextColor)</li>
   </ul>
-  
+
   <h5>Additional Overrides</h5>
   <li>isEnabled</li>
   <li>isRippleEffectEnabled</li>
@@ -69,12 +69,12 @@ isHome: true
   <!-- @formatter:off -->
   {% highlight gradle %}
   repositories {
-      maven { url 'https://jitpack.io' }
+    maven { url 'https://jitpack.io' }
   }
   {% endhighlight %}
   <!-- @formatter:on -->
 
-  <h3 id="module_level">Module Level Gradle</h3>  
+  <h3 id="module_level">Module Level Gradle</h3>
   <!-- @formatter:off -->
   {% highlight gradle %}
   dependencies {
@@ -83,47 +83,282 @@ isHome: true
   }
   {% endhighlight %}
   <!-- @formatter:on -->
-  
-  <h2 id="configuration">Configuration</h2>
-  <p>Attributes available on the current release</p>
+
+</section>
+<section class="bs-docs-section">
+  <h1 id="configuration" class="page-header">Configuration</h1>
+  <h2 id="attributes">Attributes</h2>
+  <p>Attributes available on XML and Kotlin</p>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
-        <tr>
-          <th>Name</th>
-          <th>XML Attribute</th>
-          <th>Kotlin</th>
-          <th>Default</th>
-        </tr>
+      <tr>
+        <th>XML Attribute</th>
+        <th>Kotlin</th>
+        <th>Type</th>
+      </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Corner Radius</td>
-          <td>bkt_cornerRadius</td>
-          <td>cornerRadius</td>
-          <td>10dp</td>
-        </tr>
+      <tr>
+        <td>bkt_cornerRadius</td>
+        <td>cornerRadius</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_cornerRadiusTopLeft</td>
+        <td>cornerRadiusTopLeft/td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_cornerRadiusTopRight</td>
+        <td>cornerRadiusTopRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_cornerRadiusBottomLeft</td>
+        <td>cornerRadiusBottomLeft</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_cornerRadiusBottomRight</td>
+        <td>cornerRadiusBottomRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_borderWidth</td>
+        <td>borderWith</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_defaultBorderColor</td>
+        <td>defaultBorderColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_focusedBorderColor</td>
+        <td>focusedBorderColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_disabledBorderColor</td>
+        <td>disabledBorderColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_padding</td>
+        <td>padding</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_paddingLeft</td>
+        <td>paddingLeft</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_paddingTop</td>
+        <td>paddingTop</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_paddingRight</td>
+        <td>paddingRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_paddingBottom</td>
+        <td>paddingBottom</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_margin</td>
+        <td>margin</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_marginLeft</td>
+        <td>marginLeft</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_marginTop</td>
+        <td>marginTop</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_marginRight</td>
+        <td>marginRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_marginBottom</td>
+        <td>marginBottom</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_isRippleEffectEnabled</td>
+        <td>isRippleEffectEnabled</td>
+        <td>boolean</td>
+      </tr>
+      <tr>
+        <td>bkt_defaultBackgroundColor</td>
+        <td>defaultBackgroundColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_focusedBackgroundColor</td>
+        <td>focusedBackgroundColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_disabledBackgroundColor</td>
+        <td>disabledBackgroundColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_iconResource</td>
+        <td>iconResource</td>
+        <td>Refer to the available <a href="#options-icons">icons</a></td>
+      </tr>
+      <tr>
+        <td>bkt_iconDrawable</td>
+        <td>iconDrawable</td>
+        <td>drawable</td>
+      </tr>
+      <tr>
+        <td>bkt_iconTint</td>
+        <td>iconTint</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_disabledIconTint</td>
+        <td>disabledIconTint</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_iconArea</td>
+        <td>iconArea</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconMargin</td>
+        <td>iconMargin</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconMarginLeft</td>
+        <td>iconMarginLeft</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconMarginTop</td>
+        <td>iconMarginTop</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconMarginRight</td>
+        <td>iconMarginRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconMarginBottom</td>
+        <td>iconMarginBottom</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconPadding</td>
+        <td>iconPadding</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconPaddingLeft</td>
+        <td>iconPaddingLeft</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconPaddingTop</td>
+        <td>iconPaddingTop</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconPaddingRight</td>
+        <td>iconPaddingRight</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_iconPaddingBottom</td>
+        <td>iconPaddingBottom</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_text</td>
+        <td>text</td>
+        <td>string</td>
+      </tr>
+      <tr>
+        <td>bkt_textSize</td>
+        <td>textSize</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_textColor</td>
+        <td>textColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_disabledTextColor</td>
+        <td>disabledTextColor</td>
+        <td>color</td>
+      </tr>
+      <tr>
+        <td>bkt_textAllCaps</td>
+        <td>textAllCaps</td>
+        <td>boolean</td>
+      </tr>
+      <tr>
+        <td>bkt_defaultFont</td>
+        <td>defaultFont</td>
+        <td>Refer to the available <a href="#options-fonts">fonts</a></td>
+      </tr>
+      <tr>
+        <td>bkt_textStyle</td>
+        <td>textStyle</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_textGravity</td>
+        <td>textGravity</td>
+        <td>dimension</td>
+      </tr>
+      <tr>
+        <td>bkt_textPosition</td>
+        <td>textPosition</td>
+        <td>dimension</td>
+      </tr>
       </tbody>
     </table>
   </div>
 
-<h2 id="options">Options</h2>
-<p>Font Sets</p>
-<ul>
+  <h2 id="options">Options</h2>
+  <p id="options-fonts">Fonts</p>
+  <ul>
     <li>Open Sans</li>
     <li>Gilroy</li>
     <li>Champagne</li>
-</ul>
-<p>FontAwesome</p>
-<ul>
-    <li>To be updated!</li>
-</ul>
+  </ul>
+  <p id="options-icons">FontAwesome Icons</p>
+  <ul>
+    <li>fa_address_book</li>
+    <li>fa_address_card</li>
+    <li>fa_calculator</li>
+    <li>fa_cloud_download_alt</li>
+    <li>fa_xray</li>
+    <li>Visit the complete <a href="icon-resources.html">list</a></li>
+  </ul>
 </section>
 
 
 <section class="bs-docs-section">
   <h1 id="usage" class="page-header">Usage</h1>
-
   <h3 id="declaration_via_xml">XML Declaration</h3>
   <p>
     Load URI <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> to render runtime custom attributes
@@ -132,46 +367,47 @@ isHome: true
   <!-- @formatter:off -->
   {% highlight xml %}
   <RootLayout
-  ...
-  xmlns:app="http://schemas.android.com/apk/res-auto"
-  ...
+    ...
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    ...
   />
 
-    <io.jmdg.buttonskt.ButtonsKtView
-          android:id="@+id/bkt_demo_xml"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:layout_marginTop="10dp"
-          android:textAlignment="center"
-          ...
-          app:bkt_isEnabled="false"
-          app:bkt_isRippleEffectEnabled="true"
-          app:bkt_cornerRadius="10dp"
-          app:bkt_borderWidth="2dp"
-          app:bkt_defaultBackgroundColor="@color/colorPrimary"
-          app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
-          app:bkt_focusedBackgroundColor="@color/colorPrimaryDisabled"
-          app:bkt_text="ButtonsKt"
-          app:bkt_textSize="12dp"
-          app:bkt_textStyle="normal"
-          app:bkt_textAllCaps="false"
-          app:bkt_defaultFont="opensans_light"
-          app:bkt_textColor="@android:color/white"
-          app:bkt_disabledTextColor="@android:color/darker_gray"
-          app:bkt_iconResource="fa_cloud_download_alt"
-          app:bkt_iconArea="30dp"
-          app:bkt_iconTint="@color/colorAccent"
-          app:bkt_iconPadding="0dp"
-          app:bkt_iconMargin="10dp"
-          ... 
-          />
+  <io.jmdg.buttonskt.ButtonsKtView
+    android:id="@+id/bkt_demo_xml"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:textAlignment="center"
+    ...
+    app:bkt_isEnabled="false"
+    app:bkt_isRippleEffectEnabled="true"
+    app:bkt_cornerRadius="10dp"
+    app:bkt_borderWidth="2dp"
+    app:bkt_defaultBackgroundColor="@color/colorPrimary"
+    app:bkt_focusedBackgroundColor="@color/colorPrimaryDark"
+    app:bkt_focusedBackgroundColor="@color/colorPrimaryDisabled"
+    app:bkt_text="ButtonsKt"
+    app:bkt_textSize="12dp"
+    app:bkt_textStyle="normal"
+    app:bkt_textAllCaps="false"
+    app:bkt_defaultFont="opensans_light"
+    app:bkt_textColor="@android:color/white"
+    app:bkt_disabledTextColor="@android:color/darker_gray"
+    app:bkt_iconResource="fa_cloud_download_alt"
+    app:bkt_iconArea="30dp"
+    app:bkt_iconTint="@color/colorAccent"
+    app:bkt_iconPadding="0dp"
+    app:bkt_iconMargin="10dp"
+    ...
+  />
   ...
   </RootLayout>
   {% endhighlight %}
   <!-- @formatter:on -->
 
   <p>
-    Configure <code>isEnabled</code> instead of the default view's <code>setEnabled</code> to allow ButtonsKt engine render the desired custom configurations
+    Configure <code>isEnabled</code> instead of the default view's <code>setEnabled</code> to allow ButtonsKt engine
+    render the desired custom configurations
     (eg. disabledBackgroundColor, disabledTextColor)
   </p>
 
@@ -183,37 +419,37 @@ isHome: true
   <!-- @formatter:off -->
   {% highlight kotlin %}
   override fun onCreate(savedInstanceState: Bundle?) {
-      ...
-      // Configuration instance
-      // You are opt to change specific & named configurations
-      // This configuration can be reused for adding multiple views programatically
-      val configuration = ButtonsKt(
-              text = "DECLARED VIA CODE",
-              textSize = 18f,
-              textStyle = BktTextStyle.BOLD,
-              ...
-      )
-      ...
-  }
-{% endhighlight %}
-<!-- @formatter:on -->
-
-<p>
-  Passing the configuration instance
-</p>
-
-<!-- @formatter:off -->
-{% highlight kotlin %}
-override fun onCreate(savedInstanceState: Bundle?) {
-    ...
+  ...
     // Configuration instance
     // You are opt to change specific & named configurations
     // This configuration can be reused for adding multiple views programatically
     val configuration = ButtonsKt(
-            text = "DECLARED VIA CODE",
-            textSize = 18f,
-            textStyle = BktTextStyle.BOLD,
-            ...
+      text = "DECLARED VIA CODE",
+      textSize = 18f,
+      textStyle = BktTextStyle.BOLD,
+      ...
+    )
+  ...
+  }
+  {% endhighlight %}
+  <!-- @formatter:on -->
+
+  <p>
+    Passing the configuration instance
+  </p>
+
+  <!-- @formatter:off -->
+  {% highlight kotlin %}
+  override fun onCreate(savedInstanceState: Bundle?) {
+  ...
+    // Configuration instance
+    // You are opt to change specific & named configurations
+    // This configuration can be reused for adding multiple views programatically
+    val configuration = ButtonsKt(
+      text = "DECLARED VIA CODE",
+      textSize = 18f,
+      textStyle = BktTextStyle.BOLD,
+      ...
     )
 
     // Create ButtonsKtView with the desired configuration instance
@@ -221,10 +457,10 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     // Add custom view
     rl_main.addView(buttonsKtView)
-    ...
-}
-{% endhighlight %}
-<!-- @formatter:on -->
-<p><code>configuration</code> instance can be reused when adding more views programmatically</p>
+  ...
+  }
+  {% endhighlight %}
+  <!-- @formatter:on -->
+  <p><code>configuration</code> instance can be reused when adding more views programmatically</p>
 
 </section>

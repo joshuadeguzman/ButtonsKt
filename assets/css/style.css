@@ -164,7 +164,3 @@ h5:hover .anchor-link {
     transform: rotateZ(-360deg);
   }
 }
-
-th, td {
-  text-align: center;
-}

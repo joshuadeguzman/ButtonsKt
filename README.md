@@ -140,7 +140,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
 Joshua de Guzman | code@jmdg.io
 
-Distributed under the MIT license. See ``LICENSE`` for more information.
+Distributed under the MIT license.
 
 #### CONTRIBUTING
 

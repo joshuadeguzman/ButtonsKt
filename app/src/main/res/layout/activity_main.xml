@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        app:bkt_borderWidth="2dp"
         app:bkt_defaultFont="opensans_regular"
-        app:bkt_iconDrawable="@drawable/ic_sample"/>
+        app:bkt_iconDrawable="@drawable/ic_sample" />
 
     <io.jmdg.buttonskt.ButtonsKtView
         android:id="@+id/bkt_demo_xml_2"

@@ -144,6 +144,7 @@ class ButtonsKtView : LinearLayout {
             cornerRadiusBottomRight = typedArray.getDimension(R.styleable.ButtonsKtView_bkt_cornerRadiusBottomRight, ResolutionUtil.dpToPx(context, config.cornerRadiusBottomRight).toFloat())
         }
 
+        this.isEnabled = isEnabled
         renderBackground()
     }
 
@@ -178,9 +179,8 @@ class ButtonsKtView : LinearLayout {
         renderRadius(focusedDrawable)
         renderRadius(disabledDrawable)
 
-        renderBorder(defaultDrawable)
-        renderBorder(disabledDrawable)
-
+        renderBorder(defaultDrawable, false)
+        renderBorder(disabledDrawable, true)
 
         defaultDrawable.setColor(config.defaultBackgroundColor)
         focusedDrawable.setColor(config.focusedBackgroundColor)
@@ -326,21 +326,21 @@ class ButtonsKtView : LinearLayout {
         }
     }
 
-    private fun renderBorder(gradientDrawable: GradientDrawable) {
+    private fun renderBorder(gradientDrawable: GradientDrawable, isDisabled: Boolean) {
         if (config.borderWidth > 0) {
-            val states = arrayOf(
-                    intArrayOf(android.R.attr.state_pressed),
-                    intArrayOf(android.R.attr.state_focused),
-                    intArrayOf(android.R.attr.enabled),
-                    intArrayOf(-android.R.attr.state_pressed))
-
-            val color = intArrayOf(config.focusedBorderColor, config.focusedBorderColor, config.defaultBorderColor, config.disabledBorderColor)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                gradientDrawable.setStroke(config.borderWidth, ColorStateList(states, color))
+            if (isDisabled) {
+                gradientDrawable.setStroke(config.borderWidth, Color.TRANSPARENT)
             } else {
-                gradientDrawable.setStroke(config.borderWidth, config.defaultBorderColor)
-                if (!config.isEnabled) {
-                    gradientDrawable.setStroke(config.borderWidth, Color.TRANSPARENT)
+                val states = arrayOf(
+                        intArrayOf(android.R.attr.state_pressed),
+                        intArrayOf(android.R.attr.state_focused),
+                        intArrayOf(android.R.attr.enabled),
+                        intArrayOf(-android.R.attr.state_pressed))
+                val colors = intArrayOf(config.focusedBorderColor, config.focusedBorderColor, config.defaultBorderColor, config.defaultBorderColor)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    gradientDrawable.setStroke(config.borderWidth, ColorStateList(states, colors))
+                } else {
+                    gradientDrawable.setStroke(config.borderWidth, config.defaultBorderColor)
                 }
             }
         }

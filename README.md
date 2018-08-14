@@ -62,6 +62,9 @@ repositories {
 
 // Module level build.gradle
 dependencies {
+    // Important, be sure to explicitly declare the latest version of kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:[KOTLIN_VERSION]
+
     // Replace version with release version, e.g. 1.0.0-alpha, -SNAPSHOT
     implementation "io.jmdg:buttonskt:[VERSION]"
 }
